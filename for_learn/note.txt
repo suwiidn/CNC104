@@ -1,0 +1,139 @@
+// โครงสร้างควบคุมพื้นฐาน
+Sequence คำสั่งเเบบลำดับ
+Condition คำสั่งเงื่อนไข
+Loop คำสั่งทำซ้ำ
+
+windowe check version python : python --version
+
+// Input from user
+
+variable = input("comment :") // Variables will always be strings.
+
+/if you want variable be Integer.
+
+ variable = int(input("comments :"))
+
+
+
+// Output 
+
+print("String" , "String") // when using String. 
+print(Integer,Float) // when need to pluss or math for integer or float. don't have ("") .
+
+// Comment
+
+#  using for a line or comment back # .
+
+'''     comment     '''  using when you want comment many line, you can use (' or ")!!!.
+
+'''  comment
+      comment '''
+
+
+// Data Type
+
+Primitive data type 
+
+numbers :int , float , complex(เชิงซ้อน) 
+logic : bool -- True and False
+String
+NoneType != 0
+
+// Variable 
+No need to declare the type.
+
+  name = "suwijuk"
+  age = 19
+and 
+  name,age = "suwijuk",19
+
+/ Start variable name with only A-Z or a-z or _
+
+/ How to check variable type.
+  print(type(name))
+  print(type(age))
+ 
+
+// Casting
+
+int(variable data)
+float(variable data)
+str(variable data)
+
+!!! print("",int(variable)) # Casting only this line.
+
+
+// Operators
+
+Operator = ตัวดำเนินการ
+
+ + , - ,* ,/ ,%
+
+ ** = expo
+ // = หารไม่เอาเศษ
+
+Operand = ตัวถูกดำเนินการ
+
+
+// IF Statement
+
+/ only if
+  if condition:
+
+/ 
+  if condition :
+
+  elif condition :
+
+  else :
+
+/ pass  = This is a command that indicates no action will be taken; the program needs to run first without any specific instructions.
+
+  if num < 50 :
+    pass
+  else :
+    pass
+
+ // ternary Operator (การเขียนif else เเบบย่อ) 
+
+      statement if condition else statement
+      ex. print("yes") if num%2 ==0 else print("No")
+
+// Nested-IF (เงื่อนไขซ้อนเงื่อนไข)
+
+
+// match service (case)
+ it same case in C.
+
+ match variable:
+     case condition variable 1 :
+        statement
+     case condition variable 2 :
+        statement
+     case condition variable 3 :
+        statement      
+
+
+// Loop
+
+  /for Loop
+ 
+   for variable in range(Default number , Number of rounds ,เพิ่มที่ละ ):
+     statement
+
+
+  /while Loop !!! careful loop infinity.
+ 
+   while condition:
+     stetment
+
+   while true: #infinity loop
+           condition
+           if condition :
+             break  
+  
+
+  //break = Exit loop 
+  //continue = Back to start a new loop
+
+//Nested-Loop (ลูปซ้อนลูป)
