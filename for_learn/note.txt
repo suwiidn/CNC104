@@ -137,3 +137,170 @@ Operand = ตัวถูกดำเนินการ
   //continue = Back to start a new loop
 
 //Nested-Loop (ลูปซ้อนลูป)
+
+
+
+//String function 
+
+.upper() = ทำให้เป็นพิมพ์ใหญ่ทั้งหมด
+.lower() = ทำให้เป็นพิมพ์เล็กทั้งหมด
+.strip() = ลบช่องว่างซ้ายขวา
+.split(String) = เเบ่งข้อความตามString 
+
+
+len(String) = วัดความยาวของตัวอักษรรวมช่องว่าง strt 0 to n-1
+startswit(String) = เช็กว่าเป็นตัวเริ่มต้นจริงหรือมั้ย output : boolean
+endswith(String) = เช็กว่าเป็นตัวลงท้ายจริงหรือมั้ย output : boolean
+find(String) = หาตัวที่ต้องการ  output : position 
+count(String) = นับอักษรที่ซ้ำกัน
+replace(old , String) = ลบตัวเก่าเพิ่มตัวใหม่
+
+
+// List
+
+rang(strat , stop , stap) = สร้างลำดับตัวเลขstart 0 
+Ex suwijuk = list(rang(10 , 20 ,3))
+output = suwijuk =[10,12,14,16,18,20]
+
+
+การบวก list 
+a= [1,2,3]
+b=[4,5,2]
+print(a+b) 
+output : {1,2,3,,4,5,2}
+
+
+
+Function in list 
+len(list) = จำนวนในลิส
+min(list) = จำนวนที่น้อยที่สุดในlist
+max(list) = จำนวนที่มากที่สุดในlist
+sum(list) = บวกกันทุกจำนวนในlist
+
+list[start : end ] = การแบ่งส่วนช่วยให้เราสามารถแยกส่วนใดส่วนหนึ่งของรายการออกมาได้
+
+list.append(value) = เมธอด append() จะเพิ่มองค์ประกอบใหม่เข้าไปที่ท้ายรายการ
+Ex name = ["dan" , "bam" , "j" ] 
+   name.append("mix") 
+   print(name) 
+output [dan , bam , j , mix] 
+
+list.insert(index , value) = เมธอด insert() จะเพิ่มองค์ประกอบใหม่ที่ดัชนีที่ระบุ(กำหนดต่ำเเหน่ง)
+
+list.pop(index) = remove list[index] 
+list.pop() = if no index  will removes last position.
+
+list.index(value)  = find position in list 
+
+list.sort() = เรียงเลขจากน้อยไปมาก 
+list.reverse() = เรียงเลขจากมากไปน้อย
+
+get(key , default) =   ส่งคืนค่าของคีย์
+*name = {"suwuijuk" : 19 , "baramee" : 20 }
+
+keys()  : 
+for keys in  name.keys() :
+   print(keys)
+output =  suwuijuk \n baramee
+
+values() :
+for values in  name.values() :
+   print(valuse)
+output =  
+
+items() :
+for keys//"suwijuk" , "baramee " , values in name.item() :
+   print(keys)
+   print(values)
+
+
+
+
+
+
+//numpy 
+single data type
+NumPy (Numerical Python) is a library for numerical computing
+import numpy as np
+
+syntax
+variable  = np.array([, , , , , ,])        //varaable = [ , , , ,,  , , ,] this for list. not numpy 
+
+การบวก np
+a = np.array([1,2,3])
+b = np.array([1,2,3])
+print(a+b)
+output :[2,4,6]
+
+Common Patterns
+varable = np.array([...]) → from list
+varable = np.zeros(n) → all zeros
+varable = np.ones(n) → all ones
+varable = np.arange(start, stop, step) → sequence
+
+2มิติ :
+a = np.array([[1,2,3,4,]
+             ,[4,5,6]])
+
+dtype :
+a = np.array([1,2,3,4])
+print(a.dtype)
+or  make np.array type 
+a = np.array([1,2,4],  dtype = float)
+
+shape : Shape describes the size of an array
+print(a.shape)
+output : size array a
+
+ndim :  เช็คมิติ Dimensions check 
+print(a.ndim) 
+output : dimensions array a 
+
+reshape : การเปลี่ยนจากมิติ
+a = np.array([1,2,3,4,5,6])
+b = a.reshape(2 //row,3 //col)
+print(b)
+output : [[1,2,3]
+          [4,5,6]]
+
+np.sum(variable) 
+np.mean(variable)
+np.max(variable)
+np.min(variable)
+
+axis :
+axis=1 → sum by row
+axis=0 → sum by column 
+print(a.sum(axis =1 )) //บวกกันเเต่ละเเถว
+
+
+
+
+//pandas 
+สามารถทำงานกับข้อมูลในรูปแบบตาราง แถวและคอลัมน์
+
+syntax :
+
+data = { "name" : [suwijuk ,doramon , pikapika]
+       "age"  : [19,4,5]}
+df = pd.DataFrame(data)
+
+data = [ {"name" :"suwijuk " , "age" : "19" } ,
+       {"name" :"dandann " , "age" : "20" }]
+df = pd.DataFrame(data)       
+
+for list to pandas lists
+a =  [["suwijuk" , 19] , ["dandan" , 20]] 
+df =  pd.DataFrame(a , columns = ["name " ,"score"])
+
+
+
+.head(n) :ดึงข้อมูลมาให้ดูแค่  n  บรรทัดแรก
+pirnt(df.head(n))
+.tail(n) : ดึงข้อมูลมาให้ดูแค่  n  บรรทัดสุดท้าย
+pirnt(df.tail(n))
+
+.info() : เอกซเรย์โครงสร้างข้อมูล
+
+.shape : find size  วัดขนาดตาราง
+print(df.shape)
