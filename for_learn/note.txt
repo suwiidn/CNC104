@@ -245,7 +245,7 @@ a = np.array([[1,2,3,4,]
 dtype :
 a = np.array([1,2,3,4])
 print(a.dtype)
-or  make np.array type 
+or  make np.array type :
 a = np.array([1,2,4],  dtype = float)
 
 shape : Shape describes the size of an array
@@ -301,6 +301,11 @@ pirnt(df.head(n))
 pirnt(df.tail(n))
 
 .info() : เอกซเรย์โครงสร้างข้อมูล
+Data Type: คอลัมน์นี้เป็นตัวเลข (int64, float64) หรือเป็นข้อความ (object) ถ้าข้อมูลอายุแต่ดันโชว์เป็น object แปลว่าเราต้องหาทางแปลงค่าแล้ว
+Missing Values: ตรงที่เขียนว่า 3 non-null หมายความว่ามีข้อมูลที่ "ไม่ว่างเปล่า" อยู่ 3 ตัว ถ้าสมมติว่าตารางเรามี 10 แถว แต่คอลัมน์คะแนนบอกว่ามี 8 non-null แปลว่ามีเด็ก 2 คนที่คะแนนหายไป (เป็นค่า Null)
+print(df.info)
+
 
 .shape : find size  วัดขนาดตาราง
 print(df.shape)
+
