@@ -1,30 +1,19 @@
-import numpy as np 
-
-data	=	np.array([12,	7,	25,	18,	5,	30,	22,	9,	14,	27,	3,	20])
-
-data = data.reshape(3,4) 
-
-print(data)
-
-print("Value at row 2 and col 1 : " , data[1][0])
-print("The second row : " , data[2][:])
+#suwijuk 6809658138
 
 
-print("Values greater than 15 : " , data[data > 15])
+import requests
+import pandas as pd
 
-print("Values between 10 and 25 (inclusive)  : " , data[(data >= 15 ) & (data <= 25)])
+df = pd.DataFrame(requests.get("https://jsonplaceholder.typicode.com/posts").json())
 
-print("Sum of all elements : " , np.sum(data))
-print("Mean of each row :" , data.mean(axis = 1))
-print("Max of each column :" , data.max(axis = 0)) 
+print(df.head())
+print("\nColumns:")
+print(df.columns)
+print("\nNumber of rows:")
+print(len(df))
 
-value_data = data[data > 10] 
+df["title_length"] = df["title"].str.len()
 
-new_data = value_data.reshape(2,-1)
-
-new_data = new_data * 2
-
-print(new_data)
-
-
-
+posts_per_user = df.groupby("userId")["id"].count().sort_values(ascending=False)
+print("\nPosts per user:")
+print(posts_per_user.to_string())

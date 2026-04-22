@@ -164,8 +164,8 @@ output = suwijuk =[10,12,14,16,18,20]
 
 
 การบวก list 
-a= [1,2,3]
-b=[4,5,2]
+a = [1,2,3]
+b = [4,5,2]
 print(a+b) 
 output : {1,2,3,,4,5,2}
 
@@ -209,7 +209,7 @@ for values in  name.values() :
 output =  
 
 items() :
-for keys//"suwijuk" , "baramee " , values in name.item() :
+for keys//"suwijuk" , values in name.item() :
    print(keys)
    print(values)
 
@@ -268,7 +268,7 @@ np.mean(variable)
 np.max(variable)
 np.min(variable)
 
-axis :
+axis : 
 axis=1 → sum by row
 axis=0 → sum by column 
 print(a.sum(axis =1 )) //บวกกันเเต่ละเเถว
@@ -309,3 +309,73 @@ print(df.info)
 .shape : find size  วัดขนาดตาราง
 print(df.shape)
 
+
+Selecting Data :  df["name"]  or  df[["name", "score"]]  
+data = [ {"name" :"suwijuk " , "age" : "19" } ,
+       {"name" :"dandann " , "age" : "20" }]
+data = pd.DataFrame(data)       
+data = data["name"]
+print(data)
+output : จะเเสดงเเค่ list ของ name 
+
+
+
+.iloc : กำหนดส่วนที่ต้องการจาก row and col 
+
+df.iloc[0:4][:]
+
+
+
+
+Filtering Data (Condition) :
+
+df[df["score" > 80 ]] // เเบบฟิวเตอเดียว
+df[df[("score" > 80) & ("name" == "suwijuk") ]]  //เเบบหลายฟิวเตอร์ (ต้องใช้ | & เเทน or and เท่านั้น)
+
+
+
+
+Sorting Data : การเรียงลำดับข้อมูล 
+
+df_sorted = df.sort_values("score") // เรียงตามคอลัมน์ score จากน้อยไปมาก (ค่าเริ่มต้น)
+df_sorted_desc = df.sort_values("score", ascending=False) // เรียงจากมากไปน้อย (Descending)
+top_3 = df.sort_values("score", ascending=False).head(3) //ดึง Top 3 ที่ได้คะแนนสูงสุด
+df_multi = df.sort_values(["score", "name"]) //เรียงตามหลายคอลัมน์ (เรียง score ก่อน ถ้าเท่ากันค่อยเรียง name)
+
+
+
+
+การจัดกลุ่มข้อมูล (GroupBy / Aggregation)  .groupby :
+
+df.groupby("name")["score"].mean() // จัดกลุ่มตามชื่อแล้วหาค่าเฉลี่ยคะแนน
+
+.agg()
+
+df_group.groupby("name")["score"].agg(["mean", "max", "count"]) // จัดกลุ่มและคำนวณหลายค่าพร้อมกัน (ค่าเฉลี่ย, ค่าสูงสุด, จำนวน)
+
+
+
+
+pd.merge() :การเชื่อมข้อมูลหลายชุด
+df1 = pd.DataFrame({
+    "id": [1, 2],
+    "name": ["Alice", "Bob"]
+})
+df2 = pd.DataFrame({
+    "id": [1, 2],
+    "score": [85, 90]
+})
+df_merged = pd.merge(df1, df2, on="id") 
+print(df_merged)
+output : จะได้ข้อมูลscore เข้ามาเพิ่ม
+
+
+
+การอ่านและเขียนไฟล์ CSV (Read & Write CSV) :
+
+input file 
+df = pd.read_csv("data.csv")
+print(df.head())
+
+output file :
+df.to_csv("output.csv", index=False)
